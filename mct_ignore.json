@@ -1,0 +1,12 @@
+[
+    {
+        "category": "SHARING",
+        "path": "*.texture_set.json",
+        "description": "Ignore Vibrant Visuals Error"
+    },
+    {
+        "category": "UNLINK",
+        "path": "*.png",
+        "description": "Ignore unused images as they may be referenced directly in scripts"
+    }
+]

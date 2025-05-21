@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MctIgnoreSchema",
+  "definitions": {
+    "MCT_Categories": {
+      "type": "string",
+      "enum": [
+        "ITEMS",
+        "LINESIZE",
+        "PACKSIZE",
+        "PACK",
+        "JSONTAGS",
+        "FORMATVER",
+        "SHARING",
+        "RESOURCEANIMATION",
+        "TEXTURE",
+        "TEXTUREREF",
+        "TYPES",
+        "TEXTUREIMAGE",
+        "GEOMETRY",
+        "SCRIPTMODULE",
+        "MINENGINEVER",
+        "ENTITYTYPE",
+        "ITEMTYPE",
+        "JSON",
+        "WORLDDATA",
+        "UNLINK",
+        "PACKMETADATA",
+        "STRICT",
+        "CPI",
+        "CWI",
+        "VSCODEFILE",
+        "BASEGAMEVER",
+        "BLOCKSCAT",
+        "UNKJSON",
+        "WORLD",
+        "UNKFILE",
+        "VALFILE",
+        "PATHLENGTH",
+        "NOBOM"
+      ]
+    },
+    "IgnoreReason": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "A description of the ignore reason."
+        },
+        "category": {
+          "$ref": "#/definitions/MCT_Categories",
+          "description": "The category of the ignore reason."
+        },
+        "path": {
+          "type": "string",
+          "description": "The path related to the ignore reason."
+        }
+      },
+      "required": [
+        "description",
+        "category",
+        "path"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/IgnoreReason"
+  }
+}
