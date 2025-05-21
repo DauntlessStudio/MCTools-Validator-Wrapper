@@ -2,7 +2,7 @@
     "json.schemas": [
         {
             "fileMatch": [
-                "mct_ignore.json"
+                ".mctignore"
             ],
             "url": "./.vscode/mct_ignore.schema.json"
         }

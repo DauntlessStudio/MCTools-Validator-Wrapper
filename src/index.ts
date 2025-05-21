@@ -44,7 +44,7 @@ if (!fs.statSync(path).isDirectory()) {
     process.exit(1);
 }
 
-const ignore: MctIgnore = fs.existsSync("./mct_ignore.json") ? JSON.parse(String(fs.readFileSync("./mct_ignore.json"))) : [];
+const ignore: MctIgnore = fs.existsSync("./.mctignore") ? JSON.parse(String(fs.readFileSync("./.mctignore"))) : [];
 
 exec(`mct validate all -i ${path}`, (error, stdout, stderr) => {
     if (error) {
@@ -72,6 +72,7 @@ exec(`mct validate all -i ${path}`, (error, stdout, stderr) => {
 
     if (errors.length) {
         errors.forEach(element => console.error(chalk.red(`[Error] ${element.Test} ${element.Message} ${element.Path}`)));
+        process.exit(1);
     }
 });
 
