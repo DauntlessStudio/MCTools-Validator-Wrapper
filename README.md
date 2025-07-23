@@ -4,7 +4,7 @@ This is a simple wrapper for [Mojang's Minecraft Creator Tools](https://www.npmj
 ## Installation
 Add to your project with
 ```
-npm install mct-validator
+npm install minecraft-validator
 ```
 
 ## VSCode Setup
@@ -54,6 +54,6 @@ jobs:
                 mv "Store Art" dist
             - name: Validate Project
               run: |
-                npx mct-validator --verbose --input ./dist
+                npx minecraft-validator --verbose --input ./dist
 ```
 Running `mct` requires that the validated directory has only the `Content`, `Marketing Art` and `Store Art` directories. In this example we use a few simple commands to create a `dist` containing only those directories and validate it. You may create the `dist` another way depending on your development environment.
